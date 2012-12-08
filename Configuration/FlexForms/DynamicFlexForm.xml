@@ -1,0 +1,25 @@
+{namespace flux=Tx_Flux_ViewHelpers}
+
+<f:layout name="DynamicFlexForm.xml" />
+
+<f:section name="Configuration">
+    <flux:flexform id="my-flexform">
+
+        <flux:flexform.sheet name="tab1" label="Tab 1">
+            <flux:flexform.field.input name="field1" label="Enter CSV value" transform="array" />
+        </flux:flexform.sheet>
+
+        <flux:flexform.sheet name="tab2" label="Tab 2">
+            <flux:flexform.field.input name="field2" label="Field in tab 2" />
+        </flux:flexform.sheet>
+
+    </flux:flexform>
+</f:section>
+
+<f:section name="Preview">
+    This text will be rendered as preview.<br />
+    Field 1: <f:for each="{field1}" as="field" iteration="iteration">
+        {field}<f:if condition="{iteration.isLast}" else=" - " />
+    </f:for><br />
+    Field 2: <f:if condition="{field2}" then="{field2}" else="No value entered" />
+</f:section>
