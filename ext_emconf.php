@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'Flux Tutorial',
-    'description' => "This extension should show the result of the Flux-Tutorial from: http://fedext.net/examples/flux/flexform-tutorial.html. Tested with Flux(4.7.13) and Typo3 (4.7.7)",
+    'description' => "This extension should show the result of the Flux-Tutorial from: http://fedext.net/examples/flux/flexform-tutorial.html. Tested with Flux(5.1.0) and Typo3 (4.7.7 / 6.0.0)",
     'category' => 'example',
     'author' => 'Heiko Hardt',
     'author_email' => 'heiko.hardt@pixelpark.com',
@@ -27,7 +27,7 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '4.7.13',
+    'version' => '6.0.0.0',
     'constraints' => array(
         'depends' => array(
             'extbase' => '1.5',

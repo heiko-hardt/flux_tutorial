@@ -9,7 +9,9 @@ Tx_Extbase_Utility_Extension::registerPlugin(
     'Flux tutorial: example plugin'
 );
 
-/* added by tutorial ###################################################################################################
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Flux Tutorial');
+
+/* added by tutorial (current style) ###################################################################################
 ##################################################################################################################### */
 
 /*
@@ -21,23 +23,10 @@ Tx_Extbase_Utility_Extension::registerPlugin(
  *  pluginSignature: fluxtutorial_pi1
  */
 
+t3lib_div::loadTCA('tt_content');
 $TCA['tt_content']['types']['list']['subtypes_addlist']['fluxtutorial_pi1'] = 'pi_flexform';
 
-// public static function registerFluidFlexFormPlugin($extensionKey, $pluginSignature, $templateFilename, $variables=array(), $section=NULL, $paths=NULL)
-Tx_Flux_Core::registerFluidFlexFormPlugin(
-    $_EXTKEY,
-    'fluxtutorial_pi1',
-    'EXT:flux_tutorial/Configuration/FlexForms/DynamicFlexForm.xml',
-    array(
-        'defaultValue1' => 'someDefaultValue'
-    ),
-    'Configuration',
-    array()
-
-);
-
+Tx_Flux_Core::registerConfigurationProvider('Tx_FluxTutorial_Provider_Configuration_PluginConfigurationProvider');
 /* added end ######################################################################################################## */
-
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Flux Tutorial');
 
 ?>
